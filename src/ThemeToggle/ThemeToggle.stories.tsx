@@ -1,9 +1,9 @@
 import React from "react";
-import ThemeToggle from "./ThemeToggle";
+import Toggle from "./ThemeToggle";
 
 export default {
-    title: "ThemeToggle"
+    title: "Buttons"
 };
 
-export const Foo = () => <ThemeToggle />;
+export const ThemeToggle = () => <Toggle sunShowing={true}/>;
 

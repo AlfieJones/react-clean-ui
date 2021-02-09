@@ -1,3 +1,3 @@
-import TestComponent from "./TestComponent";
+import ThemeToggle from "./ThemeToggle";
 
-export { TestComponent };
+export { ThemeToggle };

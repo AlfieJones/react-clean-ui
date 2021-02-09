@@ -1,6 +1,112 @@
-@import "../colors.scss";
-  @import "../typography.scss";
+@use "./../colors.scss" as colors;
 
-  .fooBar {
-    color: blue;
+$rayNum: 8;
+
+// The switchTheme - the box around the slider 
+.switchTheme {
+  position: relative;
+  display: flex;
+  width: 4.8rem;
+  height: 4.8rem;
+  transform: scale(1);
+  z-index: 10;
+  
+  //Want lbl for seo reasons but don't want it shown
+  .lblTxt{
+      font-size: 0;
   }
+
+  //Input checked changes sun to moon via css
+
+  input:checked + .sunMoon .ray {
+      transform: scaleX(.01);
+      opacity: 0;
+  }
+
+  .circle{
+      position: absolute;
+      background-color: colors.$primaryNavColor;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 1.6rem;
+      transition: all .6s cubic-bezier(.645,.045,.355,1);
+  }
+
+  input:checked + .sunMoon .circle{
+      transform: translate(5px, -10px) scale(1.6) !important;
+      background: none;
+      box-shadow: -3.75px 3.75px 0 1.25px colors.$primaryNavColor;
+      border-radius: 50%; 
+  }
+  
+  input:checked + .sunMoon .circle {
+      transform: scale(1.6);
+  }  
+  
+  input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+  }
+  
+  input:checked + .sunMoon {
+      transform: scale(.8);
+  }
+
+}
+
+.sunMoon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+  margin-top: 0;
+}
+
+.ray {
+  position: absolute;
+  background-color: colors.$primaryNavColor;
+  width: .8rem;
+  height: .2rem;
+  border-radius: .2rem;
+  transition: all .7s cubic-bezier(.645,.045,.355,1);
+}
+
+@mixin rayRotate($index) {
+  transform: rotate(#{(360/$rayNum)*$index}deg) translate(1.5rem);
+}
+
+.one {
+  @include rayRotate(0);
+}
+.two {
+  @include rayRotate(1);
+}
+.three {
+  @include rayRotate(2);
+}
+.four {
+  @include rayRotate(3);
+}
+.five {
+  @include rayRotate(4);
+}
+.six {
+  @include rayRotate(5);
+}
+.seven {
+  @include rayRotate(6);
+}
+.eight {
+  @include rayRotate(7);
+}
+
+@media (min-width: 768px) {
+  .switchTheme {
+      transform: scale(0.7);
+    }
+}

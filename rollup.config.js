@@ -27,14 +27,14 @@ export default {
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
     postcss({
-      modules: true
+      modules: false
     }),
     copy({
       targets: [
         {
-          src: "src/color.scss",
+          src: "src/colors.scss",
           dest: "build",
-          rename: "variables.scss"
+          rename: "colors.scss"
         },
         {
           src: "src/typography.scss",
