@@ -1,53 +1,69 @@
 {
-  "name": "react-clean-ui",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.6.3",
-    "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.25",
-    "@types/react": "^17.0.1",
-    "@types/react-dom": "^17.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.2",
-    "typescript": "^4.1.3",
-    "web-vitals": "^1.1.0"
-  },
+  "name": "react-component-library",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "module": "build/index.esm.js",
+  "files": [
+    "build"
+  ],
+  "types": "build/index.d.ts",
+  "description": "A skeleton to create your own React component library using Rollup, TypeScript, Sass and Storybook",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build": "rollup -c",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "storybook": "start-storybook -p 6006",
+    "storybook:export": "build-storybook",
+    "generate": "node ./util/create-component",
+    "prepublishOnly": "npm run build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlfieJones/react-clean-ui"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [
+    "React",
+    "Component",
+    "Library",
+    "Rollup",
+    "Typescript",
+    "Sass",
+    "Storybook"
+  ],
+  "author": "Alfred Jones",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlfieJones/react-clean-ui/issues"
+  },
+  "homepage": "https://github.com/AlfieJones/react-clean-ui#readme",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.1.17",
-    "@storybook/addon-essentials": "^6.1.17",
-    "@storybook/addon-links": "^6.1.17",
-    "@storybook/node-logger": "^6.1.17",
-    "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.1.17"
+    "@babel/core": "^7.12.10",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@storybook/react": "^6.1.12",
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^11.2.3",
+    "@types/jest": "^24.0.24",
+    "@types/react": "^16.9.12",
+    "@types/react-dom": "^16.9.8",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^10.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "node-sass": "^5.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup": "^2.36.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^3.1.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "sass-loader": "^10.1.1",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.3"
   }
 }
