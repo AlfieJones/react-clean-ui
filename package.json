@@ -36,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/AlfieJones/react-clean-ui/issues"
   },
-  "homepage": "https://github.com/AlfieJones/react-clean-ui#readme",
+  "homepage": "https://alfie-jones.com/react-clean-ui/",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
